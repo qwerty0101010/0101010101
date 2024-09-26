@@ -86,7 +86,7 @@ class TodoApp(ft.Column):
             scrollable=False,
             selected_index=0,
             on_change=self.tabs_changed,
-            tabs=[ft.Tab(text="all"), ft.Tab(text="active"), ft.Tab(text="completed")],
+            tabs=[ft.Tab(text="Todas"), ft.Tab(text="Activas"), ft.Tab(text="Completas")],
         )
 
         self.items_left = ft.Text("0 items left")
@@ -116,7 +116,7 @@ class TodoApp(ft.Column):
                         controls=[
                             self.items_left,
                             ft.OutlinedButton(
-                                text="Clear completed", on_click=self.clear_clicked
+                                text="Limpiar tareas finitas", on_click=self.clear_clicked
                             ),
                         ],
                     ),
@@ -152,9 +152,9 @@ class TodoApp(ft.Column):
         count = 0
         for task in self.tasks.controls:
             task.visible = (
-                status == "all"
-                or (status == "active" and task.completed == False)
-                or (status == "completed" and task.completed)
+                status == "Todas"
+                or (status == "Activas" and task.completed == False)
+                or (status == "Completas" and task.completed)
             )
             if not task.completed:
                 count += 1
