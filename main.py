@@ -116,7 +116,7 @@ class TodoApp(ft.Column):
                         controls=[
                             self.items_left,
                             ft.OutlinedButton(
-                                text="Limpiar tareas finitas", on_click=self.clear_clicked
+                                text="Limpiar completas", on_click=self.clear_clicked
                             ),
                         ],
                     ),
@@ -158,7 +158,7 @@ class TodoApp(ft.Column):
             )
             if not task.completed:
                 count += 1
-        self.items_left.value = f"{count} active item(s) left"
+        self.items_left.value = f"{count} tareas activas pendientes"
 
 
 def main(page: ft.Page):
