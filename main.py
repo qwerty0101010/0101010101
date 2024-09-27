@@ -78,7 +78,7 @@ class TodoApp(ft.Column):
     def __init__(self):
         super().__init__()
         self.new_task = ft.TextField(
-            hint_text="Qué necesitas terminar?", on_submit=self.add_clicked, expand=True
+            hint_text="Qué necesitas terminar, Melanita?", on_submit=self.add_clicked, expand=True
         )
         self.tasks = ft.Column()
 
